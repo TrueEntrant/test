@@ -4,21 +4,21 @@ import { CurrencyTable } from "../../components/currency";
 import Calculator from "../../components/calculator";
 
 export default class Main extends React.Component {
-  state = {};
+  state: any = {};
 
   componentWillMount() {
+    if (!navigator.onLine) {
+      return this.setState({ data: localStorage.getItem("data") });
+    }
     fetch("https://api.exchangeratesapi.io/latest")
-      .then(res => res.json())
-      .then(data =>
+      .then((res) => res.json())
+      .then((data) =>
         setTimeout(() => {
           localStorage.setItem("data", JSON.stringify(data));
           this.setState({ data });
         }, 1000)
       )
-      .catch(err => this.setState({ data: localStorage.getItem("data") }));
-    if (!navigator.onLine) {
-      this.setState({ data: localStorage.getItem("data") });
-    }
+      .catch((err) => this.setState({ data: localStorage.getItem("data") }));
   }
 
   renderHeader = () => {
@@ -63,8 +63,16 @@ export default class Main extends React.Component {
               {this.renderTable()}
             </div>
             <div className="calc-root">
-              <Calculator result="Dollar" name="Euro" rate={this.state.data.rates.USD} />
-              <Calculator name="Dollar" result="Euro" rate={this.state.data.rates.USD} />
+              <Calculator
+                result="Dollar"
+                name="Euro"
+                rate={this.state.data.rates.USD}
+              />
+              <Calculator
+                name="Dollar"
+                result="Euro"
+                rate={this.state.data.rates.USD}
+              />
             </div>
           </div>
         )}
