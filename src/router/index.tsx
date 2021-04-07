@@ -7,7 +7,7 @@ const RootRouter = (props: any) => {
   return (
     <BrowserRouter>
       <div className="App">
-        <Header></Header>
+        <Header />
         <Switch>
           <Route exact path="/" component={Main} />
         </Switch>

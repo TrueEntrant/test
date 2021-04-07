@@ -2,9 +2,12 @@
   "compilerOptions": {
     "target": "es5",
     "module": "ESNext",
-    "lib": ["es2017", "dom"],
+    "lib": [
+      "es2017",
+      "dom"
+    ],
     "allowJs": true,
-    "jsx": "preserve",
+    "jsx": "react",
     "removeComments": false,
     "noEmit": true,
     "strict": false,
@@ -14,19 +17,24 @@
     "noUnusedLocals": true,
     "noUnusedParameters": false,
     "moduleResolution": "node",
-    "types": ["react", "jest"],
+    "types": [
+      "react",
+      "jest"
+    ],
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "baseUrl": ".",
-    "paths": {
-      "@main/types": ["types/index.ts"],
-      "@main/components": ["components"],
-      "@main/containers": ["containers"]
-    }
+    "allowSyntheticDefaultImports": true,
+    "noFallthroughCasesInSwitch": true
   },
-  "include": ["**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+  "include": [
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
