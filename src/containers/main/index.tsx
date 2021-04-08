@@ -26,10 +26,12 @@ export default class Main extends React.Component {
     console.log(data);
 
     return (
-      <div className="App-header">
-        <h2>Base currency: {data.base}</h2>
-        <h3>Latest update: {data.date}</h3>
-      </div>
+      <>
+        <div className="App-header">
+          <h2>Base currency: {data.base}</h2>
+          <h3>Latest update: {data.date}</h3>
+        </div>
+      </>
     );
   };
 
