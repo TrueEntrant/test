@@ -6,12 +6,14 @@ import Main from "src/containers/main";
 const RootRouter = (props: any) => {
   return (
     <BrowserRouter>
-      <div className="App">
-        <Header />
-        <Switch>
-          <Route exact path="/" component={Main} />
-        </Switch>
-      </div>
+      <>
+        <div className="App">
+          <Header />
+          <Switch>
+            <Route exact path="/" component={Main} />
+          </Switch>
+        </div>
+      </>
     </BrowserRouter>
   );
 };
